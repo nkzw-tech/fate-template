@@ -1,0 +1,16 @@
+packages:
+  - client
+  - server
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - msgpackr-extract
+  - prisma
+  - unrs-resolver
+
+overrides:
+  vite: 8.0.0-beta.0

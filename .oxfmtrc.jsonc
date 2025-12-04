@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "experimentalSortImports": {
+    "newlinesBetween": false
+  },
+  "ignorePatterns": [
+    ".vitepress/cache",
+    ".vitepress/dist",
+    "coverage/",
+    "dist/",
+    "example/client/dist/",
+    "example/client/src/lib/fate.generated.ts",
+    "example/client/src/translations/",
+    "example/server/dist",
+    "pnpm-lock.yaml"
+  ]
+}
