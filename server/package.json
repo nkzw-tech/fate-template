@@ -2,11 +2,11 @@
   "name": "@app/server",
   "version": "0.0.1",
   "private": true,
+  "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/nkzw-tech/fate.git"
   },
-  "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "type": "module",
   "scripts": {
     "build": "tsdown",
@@ -14,28 +14,28 @@
     "dev:setup": "pnpm prisma generate",
     "fate:generate": "dotenv -e .env pnpm fate generate @app/server/src/router.ts ../client/src/fate.ts"
   },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@hono/trpc-server": "^0.4.2",
+    "@nkzw/core": "^1.3.1",
+    "@nkzw/define-env": "^1.1.0",
+    "@nkzw/fate": "^0.1.2",
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "@trpc/server": "^11.8.1",
+    "better-auth": "^1.4.12",
+    "hono": "^4.11.4",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "nodemon": "^3.1.11",
+    "prisma": "^7.2.0"
+  },
   "nodemonConfig": {
     "ext": "ts,tsx",
     "watch": [
       "src/"
     ]
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.19.7",
-    "@hono/trpc-server": "^0.4.1",
-    "@nkzw/core": "^1.3.1",
-    "@nkzw/define-env": "^1.1.0",
-    "@nkzw/fate": "^0.1.1",
-    "@prisma/adapter-pg": "^7.1.0",
-    "@prisma/client": "^7.1.0",
-    "@trpc/server": "^11.7.2",
-    "better-auth": "^1.4.6",
-    "hono": "^4.10.8",
-    "zod": "^4.1.13"
-  },
-  "devDependencies": {
-    "@types/node": "^24.10.2",
-    "nodemon": "^3.1.11",
-    "prisma": "^7.1.0"
   }
 }

@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "description": "fate is a modern data client for React.",
+  "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/nkzw-tech/fate-template.git"
   },
-  "author": "Christoph Nakazawa <christoph.pojer@gmail.com>",
   "type": "module",
   "scripts": {
     "build": "dotenv -e server/.env -- pnpm run -r build",
@@ -28,23 +28,23 @@
   },
   "devDependencies": {
     "@app/server": "workspace:*",
-    "@nkzw/eslint-config": "^3.2.1",
+    "@nkzw/eslint-config": "^3.3.0",
     "@nkzw/find-workspaces": "^1.0.0",
-    "@swc/core": "^1.15.3",
-    "@types/node": "^24.10.2",
-    "@typescript/native-preview": "7.0.0-dev.20251209.1",
+    "@swc/core": "^1.15.8",
+    "@types/node": "^25.0.8",
+    "@typescript/native-preview": "7.0.0-dev.20260113.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv": "^17.2.3",
     "dotenv-cli": "^11.0.0",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "npm-run-all2": "^8.0.4",
-    "oxc-minify": "^0.102.0",
-    "oxfmt": "^0.17.0",
-    "prisma": "^7.1.0",
+    "oxc-minify": "^0.108.0",
+    "oxfmt": "^0.24.0",
+    "prisma": "^7.2.0",
     "ts-node": "^10.9.2",
-    "tsdown": "0.17.2",
+    "tsdown": "0.20.0-beta.2",
     "vite": "8.0.0-beta.0",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.17"
   },
   "engines": {
     "node": ">=24.0.0",
