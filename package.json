@@ -11,19 +11,19 @@
   "type": "module",
   "scripts": {
     "build": "dotenv -e server/.env -- pnpm run -r build",
+    "dev": "npm-run-all --parallel dev:client dev:server",
     "dev:client": "cd client && pnpm dev",
     "dev:server": "cd server && pnpm dev",
     "dev:setup": "pnpm -r dev:setup",
-    "dev": "npm-run-all --parallel dev:client dev:server",
     "fate:generate": "pnpm run -r fate:generate",
     "format": "oxfmt",
-    "lint:format": "oxfmt --check .",
     "lint": "eslint --cache .",
+    "lint:format": "oxfmt --check .",
     "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || exit 0",
     "prisma": "cd server && pnpm prisma",
     "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
-    "tsc:check": "tsgo",
     "tsc": "pnpm tsgo",
+    "tsc:check": "tsgo",
     "vitest:run": "vitest run"
   },
   "devDependencies": {

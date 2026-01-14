@@ -72,7 +72,7 @@ export default function SignIn() {
               <Stack
                 alignCenter
                 as="a"
-                className="inline-flex! underline hover:no-underline px-1"
+                className="inline-flex! px-1 underline hover:no-underline"
                 gap={4}
                 href="https://github.com/nkzw-tech/fate-template/blob/main/server/src/prisma/seed.tsx#L7"
                 rel="noreferrer"

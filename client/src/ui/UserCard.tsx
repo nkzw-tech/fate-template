@@ -117,7 +117,7 @@ export default function UserCard({ user: userRef }: { user: ViewRef<'User'> }) {
             <fbt desc="Your account headline">Your account</fbt>
           </H2>
           <Stack alignCenter between gap={16}>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-sm text-muted-foreground">
               <fbt desc="Signed in text">
                 Signed in as <fbt:param name="username">{user.name}</fbt:param>.
               </fbt>

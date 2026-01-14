@@ -92,11 +92,11 @@ const CommentInput = ({
 
   return (
     <VStack action={handleAddComment} as="form" gap>
-      <span className="text-foreground text-sm font-medium">
+      <span className="text-sm font-medium text-foreground">
         <fbt desc="Comment add label">Add a comment</fbt>
       </span>
       <textarea
-        className="min-h-20 w-full placeholder-gray-500 dark:placeholder-gray-400 transition outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-200 disabled:opacity-50 squircle border border-gray-200/80 bg-gray-100/50 p-3 text-sm dark:border-neutral-800 dark:bg-neutral-900/40"
+        className="squircle min-h-20 w-full border border-gray-200/80 bg-gray-100/50 p-3 text-sm placeholder-gray-500 transition outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-200 disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-900/40 dark:placeholder-gray-400"
         disabled={addCommentIsPending}
         onChange={(event) => setCommentText(event.target.value)}
         onKeyDown={maybeSubmitComment}
@@ -104,7 +104,7 @@ const CommentInput = ({
         value={commentText}
       />
       {anyServerError ? (
-        <p className="text-destructive text-sm">
+        <p className="text-sm text-destructive">
           {anyServerError instanceof Error ? (
             anyServerError.message
           ) : (
@@ -249,10 +249,10 @@ export function PostCard({ detail, post: postRef }: { detail?: boolean; post: Vi
             </Button>
           </Stack>
         </Stack>
-        <p className="text-foreground/90 text-sm leading-relaxed lg:text-base">{post.content}</p>
-        <p className="text-muted-foreground text-sm">- {author?.name ?? 'Unknown author'}</p>
+        <p className="text-sm leading-relaxed text-foreground/90 lg:text-base">{post.content}</p>
+        <p className="text-sm text-muted-foreground">- {author?.name ?? 'Unknown author'}</p>
         <VStack gap={16}>
-          <h4 className="text-foreground text-base font-semibold">
+          <h4 className="text-base font-semibold text-foreground">
             <fbt desc="Comment headline">
               <fbt:plural count={post.commentCount} many="Comments" showCount="ifMany">
                 One Comment

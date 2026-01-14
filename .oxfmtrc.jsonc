@@ -4,15 +4,19 @@
   "experimentalSortImports": {
     "newlinesBetween": false,
   },
+  "experimentalSortPackageJson": {
+    "sortScripts": true,
+  },
+  "experimentalTailwindcss": {
+    "stylesheet": "client/src/App.css",
+  },
   "ignorePatterns": [
-    ".vitepress/cache",
-    ".vitepress/dist",
     "coverage/",
     "dist/",
-    "example/client/dist/",
-    "example/client/src/fate.ts",
-    "example/client/src/translations/",
-    "example/server/dist",
+    "client/dist/",
+    "client/src/fate.ts",
+    "client/src/translations/",
+    "server/dist",
     "pnpm-lock.yaml",
   ],
 }

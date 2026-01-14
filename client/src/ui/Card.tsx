@@ -18,9 +18,9 @@ export default function Card({
       )}
       {...props}
     >
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-indigo-500/15 transition duration-200 opacity-30" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-indigo-500/15 opacity-30 transition duration-200" />
       <VStack
-        className="relative z-10 flex w-full h-full"
+        className="relative z-10 flex h-full w-full"
         gap={16}
         horizontalPadding={20}
         verticalPadding={16}

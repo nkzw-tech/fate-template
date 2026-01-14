@@ -71,7 +71,7 @@ export default function Search() {
           ref={(ref) => ref?.focus()}
           value={query}
         />
-        <div className="text-muted-foreground text-xs">
+        <div className="text-xs text-muted-foreground">
           <fbt desc="Slowdown label explanation">500ms artificial slowdown</fbt>
         </div>
       </Stack>
