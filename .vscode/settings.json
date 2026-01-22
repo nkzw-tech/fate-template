@@ -21,6 +21,5 @@
   "typescript.reportStyleChecksAsWarnings": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/vitest"],
-  "typescript.experimental.useTsgo": true,
-  "oxc.fmt.experimental": true
+  "typescript.experimental.useTsgo": true
 }
