@@ -20,7 +20,7 @@ export default function LocaleSwitcher() {
         </button>
       </Button>
       <Card
-        className="group self-center justify-self-center border-slate-100 bg-white shadow transition-all dark:bg-black"
+        className="translate-y-50 justify-self-center border-slate-100 bg-white shadow transition-all dark:bg-black"
         id="locale-switcher"
         popover="auto"
       >
