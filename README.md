@@ -69,11 +69,13 @@ You'll need Node.js 24+ and pnpm 10+.
 CREATE ROLE fate WITH LOGIN PASSWORD 'echo';
 CREATE DATABASE fate;
 ALTER DATABASE fate OWNER TO fate;
+ALTER ROLE fate CREATEDB;
 ```
 
 Then, at the root of the project, run:
 
 - `pnpm prisma migrate dev` to create the database and run the migrations.
+  - If you're running in a non-interactive shell, use `pnpm prisma migrate dev --name init` (or any name) to avoid the prompt.
 - You might want to run `pnpm prisma migrate reset` and `pnpm prisma db seed` to seed the database with initial data.
 - Run `pnpm fate:generate` to regenerate the fate client code.
 - Run `pnpm test` to run all tests.
