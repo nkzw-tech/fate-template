@@ -11,12 +11,13 @@
     "stylesheet": "client/src/App.css",
   },
   "ignorePatterns": [
-    "coverage/",
-    "dist/",
     "client/dist/",
+    "client/index.html",
     "client/src/fate.ts",
     "client/src/translations/",
-    "server/dist",
+    "coverage/",
+    "dist/",
     "pnpm-lock.yaml",
+    "server/dist",
   ],
 }
