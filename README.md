@@ -30,7 +30,7 @@ Read the [Getting Started Guide](https://fate.technology/guide/core-concepts) to
 
 This template combines the Nakazawa Tech's [Web App Template](https://github.com/nkzw-tech/web-app-template) and [Server Template](https://github.com/nkzw-tech/server-template) into a monorepo, with unified tooling, tRPC instead of GraphQL and _fate_ as the data client.
 
-_This template lives on the edge._ It's a turbocharged starting point on top of an already optimized stack. It uses TypeScript Go, Vite 8, Oxfmt and ships with sensible defaults to unlock an incredibly fast development experience. It follows the principles laid out in [Building Scalable Applications](https://www.youtube.com/watch?v=rxPTEko8J7c&t=36s).
+_This template lives on the edge._ It's a turbocharged starting point on top of an already optimized stack. It uses TypeScript Go, Vite+, and ships with sensible defaults to unlock an incredibly fast development experience. It follows the principles laid out in [Building Scalable Applications](https://www.youtube.com/watch?v=rxPTEko8J7c&t=36s).
 
 Next to [_fate_](https://fate.technology), it comes with the following technologies:
 
@@ -59,9 +59,9 @@ Next to [_fate_](https://fate.technology), it comes with the following technolog
 
 ## Initial Setup
 
-You'll need Node.js 24+ and pnpm 10+.
+You'll need Node.js 24+ and [Vite+](https://viteplus.dev/guide/).
 
-- Run `pnpm install && pnpm dev:setup`.
+- Run `vp install && vp run dev:setup`.
 - Set up a Postgres database locally and add the connection string to `server/.env` as `DATABASE_URL` or run `docker-compose up -d` to start postgres in a docker container.
 - Postgres setup:
 
@@ -73,9 +73,9 @@ ALTER DATABASE fate OWNER TO fate;
 
 Then, at the root of the project, run:
 
-- `pnpm prisma migrate dev` to create the database and run the migrations.
-- You might want to run `pnpm prisma migrate reset` and `pnpm prisma db seed` to seed the database with initial data.
-- Run `pnpm fate:generate` to regenerate the fate client code.
-- Run `pnpm test` to run all tests.
-- Run `pnpm dev` to run the client and server.
+- `vp run prisma migrate dev` to create the database and run the migrations.
+- You might want to run `vp run prisma migrate reset` and `vp run prisma db seed` to seed the database with initial data.
+- Run `vp run fate:generate` to regenerate the fate client code.
+- Run `vp run test:all` to run all tests.
+- Run `vp run dev` to run the client and server.
 - Visit `http://localhost:5173` to see the app in action.

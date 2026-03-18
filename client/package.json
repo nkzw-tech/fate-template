@@ -9,9 +9,10 @@
   },
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite dev",
-    "dev:setup": "pnpm fbtee collect && pnpm fbtee translate"
+    "build": "vp build",
+    "dev": "vp dev",
+    "dev:setup": "vp run fbtee:all",
+    "fbtee:all": "vpx fbtee collect && vpx fbtee translate"
   },
   "dependencies": {
     "@app/server": "workspace:*",
@@ -43,7 +44,8 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "tailwindcss": "^4.2.1",
-    "vite": "8.0.0"
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
   },
   "browserslist": [
     ">0.2%",

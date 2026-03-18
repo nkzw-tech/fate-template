@@ -2,6 +2,11 @@ packages:
   - client
   - server
 
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  vite-plus: latest
+
 onlyBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'
@@ -13,4 +18,13 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 overrides:
-  vite: 8.0.0-beta.0
+  vite: 'catalog:'
+  vitest: 'catalog:'
+
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: '*'
+    vitest: '*'

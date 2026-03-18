@@ -10,21 +10,15 @@
   },
   "type": "module",
   "scripts": {
-    "build": "dotenv -e server/.env -- pnpm run -r build",
+    "build": "dotenv -e server/.env -- vp run --filter '@app/client' --filter '@app/server' build",
     "dev": "npm-run-all --parallel dev:client dev:server",
-    "dev:client": "cd client && pnpm dev",
-    "dev:server": "cd server && pnpm dev",
-    "dev:setup": "pnpm -r dev:setup",
-    "fate:generate": "pnpm run -r fate:generate",
-    "format": "oxfmt",
-    "lint": "oxlint .",
-    "lint:format": "oxfmt --check .",
-    "preinstall": "command -v git >/dev/null 2>&1 && git config core.hooksPath git-hooks || exit 0",
-    "prisma": "cd server && pnpm prisma",
-    "test": "npm-run-all --parallel tsc:check vitest:run lint lint:format",
-    "tsc": "pnpm tsgo",
-    "tsc:check": "tsgo",
-    "vitest:run": "vitest run"
+    "dev:client": "cd client && vp dev",
+    "dev:server": "cd server && vp run dev",
+    "dev:setup": "vp run --filter '@app/client' --filter '@app/server' dev:setup",
+    "fate:generate": "vp run --filter '@app/server' fate:generate",
+    "prepare": "vp config",
+    "prisma": "vp run --filter '@app/server' prisma",
+    "tsc": "tsgo"
   },
   "devDependencies": {
     "@app/server": "workspace:*",
@@ -41,17 +35,15 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "npm-run-all2": "^8.0.4",
-    "oxc-minify": "^0.120.0",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
     "prisma": "^7.5.0",
     "ts-node": "^10.9.2",
-    "tsdown": "0.21.4",
-    "vite": "8.0.0",
-    "vitest": "^4.1.0"
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": ">=24.0.0",
     "pnpm": ">=10.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.32.1"
 }
