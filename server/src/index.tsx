@@ -1,6 +1,6 @@
+import { parseArgs, styleText } from 'node:util';
 import { serve } from '@hono/node-server';
 import parseInteger from '@nkzw/core/parseInteger.js';
-import { parseArgs, styleText } from 'node:util';
 import app from './app.tsx';
 
 const {

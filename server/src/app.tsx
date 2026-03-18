@@ -1,8 +1,8 @@
 #!/usr/bin/env NODE_ENV=development node_modules/.bin/nodemon -q -I --exec node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm --env-file .env
+import { styleText } from 'node:util';
 import { trpcServer } from '@hono/trpc-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { styleText } from 'node:util';
 import { auth } from './lib/auth.ts';
 import env from './lib/env.ts';
 import prisma from './prisma/prisma.ts';

@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
 import { join } from 'node:path';
+import dotenv from 'dotenv';
 import { defineConfig } from 'vitest/config';
 
 const root = process.cwd();

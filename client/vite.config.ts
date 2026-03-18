@@ -1,9 +1,9 @@
-import fbteePreset from '@nkzw/babel-preset-fbtee';
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
-import reactCompiler from 'babel-plugin-react-compiler';
-import dotenv from 'dotenv';
 import { join } from 'node:path';
+import fbteePreset from '@nkzw/babel-preset-fbtee';
+import babel from '@rolldown/plugin-babel';
+import tailwindcss from '@tailwindcss/vite';
+import react, { reactCompilerPreset } from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 import { defineConfig } from 'vite';
 
 const root = process.cwd();
@@ -21,12 +21,10 @@ if (!process.env.VITE_SERVER_URL) {
 export default defineConfig({
   build: { outDir: join(root, '../dist/client') },
   plugins: [
-    tailwindcss(),
-    react({
-      babel: {
-        plugins: [reactCompiler],
-        presets: [fbteePreset],
-      },
+    babel({
+      presets: [fbteePreset, reactCompilerPreset()],
     }),
+    tailwindcss(),
+    react(),
   ],
 });
