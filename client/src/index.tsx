@@ -22,6 +22,14 @@ import Header from './ui/Header.tsx';
 import Section from './ui/Section.tsx';
 import AuthClient from './user/AuthClient.tsx';
 
+const Thinking = () => (
+  <Section>
+    <Stack center className="animate-pulse text-gray-500 italic" verticalPadding={48}>
+      <fbt desc="Text for thinking/loading screen">Thinking…</fbt>
+    </Stack>
+  </Section>
+);
+
 const LocaleContext = createLocaleContext({
   availableLanguages: AvailableLanguages,
   clientLocales: [navigator.language, ...navigator.languages],
@@ -35,7 +43,7 @@ const LocaleContext = createLocaleContext({
 });
 
 const App = () => {
-  const { data: session } = AuthClient.useSession();
+  const { data: session, isPending } = AuthClient.useSession();
   const userId = session?.user.id;
 
   const fate = useMemo(
@@ -55,11 +63,23 @@ const App = () => {
     [userId],
   );
 
+  if (isPending) {
+    return (
+      <LocaleContext>
+        <div className="min-h-screen bg-background text-foreground">
+          <div className="min-h-screen bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_0,rgba(99,102,241,0.08),transparent_28%)]">
+            <Thinking />
+          </div>
+        </div>
+      </LocaleContext>
+    );
+  }
+
   return (
     <LocaleContext>
-      <FateClient client={fate} key={userId || 'anonymous'}>
+      <FateClient client={fate} key={userId}>
         <BrowserRouter>
-          <div className="min-h-screen">
+          <div className="min-h-screen bg-background text-foreground">
             <div className="min-h-screen bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_0,rgba(99,102,241,0.08),transparent_28%)]">
               <Header />
               <ErrorBoundary
@@ -71,19 +91,7 @@ const App = () => {
                   </Section>
                 )}
               >
-                <Suspense
-                  fallback={
-                    <Section>
-                      <Stack
-                        center
-                        className="animate-pulse text-gray-500 italic"
-                        verticalPadding={48}
-                      >
-                        <fbt desc="Text for thinking/loading screen">Thinking…</fbt>
-                      </Stack>
-                    </Section>
-                  }
-                >
+                <Suspense fallback={<Thinking />}>
                   <Routes>
                     <Route element={<HomeRoute />} path="/" />
                     <Route element={<PostRoute />} path="/post/:id" />
