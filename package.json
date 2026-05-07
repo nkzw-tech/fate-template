@@ -22,17 +22,16 @@
   "devDependencies": {
     "@app/server": "workspace:*",
     "@nkzw/eslint-plugin": "^2.0.0",
-    "@nkzw/oxlint-config": "^1.1.1",
-    "@swc/core": "^1.15.30",
+    "@nkzw/oxlint-config": "^1.2.1",
+    "@swc/core": "^1.15.33",
     "@types/node": "^25.6.0",
-    "@typescript/native-preview": "7.0.0-dev.20260423.1",
+    "@typescript/native-preview": "7.0.0-dev.20260505.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv": "^17.4.2",
     "dotenv-cli": "^11.0.0",
-    "eslint-plugin-no-only-tests": "^3.3.0",
+    "eslint-plugin-no-only-tests": "^3.4.0",
     "eslint-plugin-perfectionist": "^5.9.0",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-unused-imports": "^4.4.1",
     "npm-run-all2": "^8.0.4",
     "prisma": "^7.8.0",
     "ts-node": "^10.9.2",
@@ -42,7 +41,7 @@
   },
   "engines": {
     "node": ">=24.0.0",
-    "pnpm": ">=10.0.0"
+    "pnpm": ">=11.0.0"
   },
-  "packageManager": "pnpm@10.32.1"
+  "packageManager": "pnpm@11.0.6"
 }
